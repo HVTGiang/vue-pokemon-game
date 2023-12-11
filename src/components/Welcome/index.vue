@@ -37,10 +37,6 @@ const levels = [
         <p class="item__label">{{ level.label }}</p>
       </div>
     </div>
-    <div class="footing">
-      This game is by
-      <a href="https://www.facebook.com/vutruonggiang.hoang.9/" class="link">GiangHVT</a>
-    </div>
   </div>
 </template>
 

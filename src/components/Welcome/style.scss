@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 50px;
 
   .heading {
     font-weight: 700;
@@ -47,16 +48,6 @@
       & > .item__label {
         font-size: 1.25rem;
       }
-    }
-  }
-  .footing {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    font-size: 1.5rem;
-    & > .link {
-      color: var(--color-link);
     }
   }
 }

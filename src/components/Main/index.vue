@@ -6,6 +6,7 @@ import { cloneDeep } from 'lodash'
 import Welcome from '../Welcome/index.vue'
 import Interact from '../Interact/index.vue'
 import Result from '../Result/index.vue'
+import Footing from '../Footer/index.vue'
 
 let currentState = ref('start')
 const size = ref(0)
@@ -76,6 +77,7 @@ watchEffect(() => {
   <Welcome v-if="currentState === 'start'" @start="handleStart($event)" />
   <Interact v-if="currentState === 'interact'" :size="size" @complete="handleCompleteOne" />
   <Result v-if="currentState === 'complete'" :completeTime="timer" @restart="handleRestart" />
+  <Footing />
 </template>
 
 <style scoped lang="scss">
