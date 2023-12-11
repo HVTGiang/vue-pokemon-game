@@ -8,7 +8,14 @@ import Interact from '../Interact/index.vue'
 import Result from '../Result/index.vue'
 import Footing from '../Footer/index.vue'
 
-let currentState = ref('start')
+// state of game
+const GAME_STATE = {
+  start: 'start',
+  interact: 'interact',
+  complete: 'complete'
+}
+
+let currentState = ref(GAME_STATE.start)
 const size = ref(0)
 const complete = ref(0)
 const timer = ref(0)
@@ -17,11 +24,11 @@ const timerId = ref()
 const handleStart = (payload: number) => {
   reset()
   size.value = payload
-  currentState.value = 'interact'
+  currentState.value = GAME_STATE.interact
 }
 
 const handleRestart = () => {
-  currentState.value = 'start'
+  currentState.value = GAME_STATE.start
 }
 
 const randomListPokemon = computed(() => {
@@ -56,12 +63,12 @@ const reset = () => {
 
 watchEffect(() => {
   if (complete.value === randomListPokemon.value.length / 2 && size.value != 0) {
-    currentState.value = 'complete'
+    currentState.value = GAME_STATE.complete
   }
 })
 
 watchEffect(() => {
-  if (currentState.value === 'interact') {
+  if (currentState.value === GAME_STATE.interact) {
     timerId.value = setInterval(() => {
       console.log(timer.value)
       timer.value++
@@ -74,9 +81,17 @@ watchEffect(() => {
 </script>
 
 <template>
-  <Welcome v-if="currentState === 'start'" @start="handleStart($event)" />
-  <Interact v-if="currentState === 'interact'" :size="size" @complete="handleCompleteOne" />
-  <Result v-if="currentState === 'complete'" :completeTime="timer" @restart="handleRestart" />
+  <Welcome v-if="currentState === GAME_STATE.start" @start="handleStart($event)" />
+  <Interact
+    v-if="currentState === GAME_STATE.interact"
+    :size="size"
+    @complete="handleCompleteOne"
+  />
+  <Result
+    v-if="currentState === GAME_STATE.complete"
+    :completeTime="timer"
+    @restart="handleRestart"
+  />
   <Footing />
 </template>
 
