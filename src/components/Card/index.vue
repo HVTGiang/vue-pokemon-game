@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import { IPokemon } from '../../core/interfaces/models/pokemon'
 
 const props = defineProps<{
@@ -24,14 +23,14 @@ const handleClick = () => {
 <template>
   <div
     class="card-container"
-    :class="[`card-${currentSize}`, isPaired && 'is-paired']"
+    :class="[`card--${currentSize}`, isPaired && 'card--is-paired']"
     @click="handleClick"
   >
-    <div class="card-inner" :class="{ 'is-chosen': pokemon.isFlipped }">
-      <div class="card-head card-face">
-        <img :src="pokemon.url" />
+    <div class="card__inner" :class="{ 'card--is-chosen': pokemon.isFlipped }">
+      <div class="card__face--head card__face">
+        <img :src="pokemon.url" alt="Pokemon image" />
       </div>
-      <div class="card-back card-face"></div>
+      <div class="card__face--back card__face"></div>
     </div>
   </div>
 </template>

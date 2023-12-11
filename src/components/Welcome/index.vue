@@ -23,12 +23,12 @@ const levels = [
 </script>
 
 <template>
-  <div class="container">
-    <h1 class="heading">✨ Pokemon Memories ✨</h1>
-    <p class="description">Select mode to start game</p>
+  <div class="welcome__container">
+    <h1 class="welcome__heading">✨ Pokemon Memories ✨</h1>
+    <p class="welcome__description">Select mode to start game</p>
     <div class="levels">
       <div
-        class="level-item"
+        class="level__item"
         v-for="(level, index) in levels"
         :key="index"
         @click="$emit('start', level.size)"

@@ -99,7 +99,7 @@ onMounted(() => {
 
 <template>
   <div class="interact-container">
-    <div class="card-list" :class="`list-${size}`">
+    <div class="card-list" :class="`card-list--${size}`">
       <Card
         v-for="(pokemon, index) in showPokemons"
         :key="index"

@@ -3,7 +3,7 @@ import Main from './components/Main/index.vue'
 </script>
 
 <template>
-  <Main />
+  <Main></Main>
 </template>
 
 <style scoped></style>

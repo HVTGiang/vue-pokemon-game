@@ -20,17 +20,29 @@ defineEmits<{
           class="contact__logo-item"
           href="https://www.facebook.com/vutruonggiang.hoang.9/"
           target="_blank"
+          rel="noopener"
         >
           <img
             src="https://img.icons8.com/color/48/000000/facebook.png"
             href="https://www.facebook.com/vutruonggiang.hoang.9/"
             target="_blank"
+            rel="noopener"
           />
         </a>
-        <a class="contact__logo-item" href="https://www.instagram.com/coconut2810/" target="_blank">
+        <a
+          class="contact__logo-item"
+          href="https://www.instagram.com/coconut2810/"
+          target="_blank"
+          rel="noopener"
+        >
           <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" />
         </a>
-        <a class="contact__logo-item" href="mailto:gianghvt.work@gmail.com" target="_blank">
+        <a
+          class="contact__logo-item"
+          href="mailto:gianghvt.work@gmail.com"
+          target="_blank"
+          rel="noopener"
+        >
           <img src="https://img.icons8.com/fluency/48/000000/gmail-new.png" />
         </a>
       </div>
