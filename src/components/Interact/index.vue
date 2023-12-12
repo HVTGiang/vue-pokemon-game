@@ -3,17 +3,17 @@ import { ref, computed, onMounted } from 'vue'
 import { cloneDeep } from 'lodash'
 
 // interfaces
-import { IPokemon } from '../../core/interfaces/models/pokemon'
+import { IPokemon } from 'src/core/interfaces/models/pokemon'
 
 // components
-import Card from '../Card/index.vue'
+import Card from 'src/components/Card/index.vue'
 
 const props = defineProps<{
   size: number
 }>()
 
 const emit = defineEmits<{
-  (e: 'complete'): void
+  (eventName: 'complete'): void
 }>()
 
 const showPokemons = ref<(IPokemon & { isFlipped: boolean })[]>([])

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IPokemon } from '../../core/interfaces/models/pokemon'
+import { IPokemon } from 'src/core/interfaces/models/pokemon'
 
 const props = defineProps<{
   currentSize: number
@@ -9,7 +9,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'choose', chosenPokemon: IPokemon & { isFlipped: boolean }, index: number): void
+  (eventName: 'choose', chosenPokemon: IPokemon & { isFlipped: boolean }, index: number): void
 }>()
 
 const handleClick = () => {

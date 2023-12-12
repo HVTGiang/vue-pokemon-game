@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   completeTime: number
 }>()
 
 defineEmits<{
-  (e: 'restart'): void
+  (eventName: 'restart'): void
 }>()
 </script>
 
 <template>
   <div class="result-container">
     <h1 class="result__title">✨ Congratulations ✨</h1>
-    <p class="result__time">{{ props.completeTime }} seconds</p>
+    <p class="result__time">{{ completeTime }} seconds</p>
     <div class="restart-button" @click="$emit('restart')">Play again</div>
     <div class="contact-block">
       <p class="contact__title">Contact me with</p>

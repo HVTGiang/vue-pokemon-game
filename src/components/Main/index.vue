@@ -3,10 +3,10 @@ import { ref, computed, watchEffect } from 'vue'
 import { cloneDeep } from 'lodash'
 
 // components
-import Welcome from '../Welcome/index.vue'
-import Interact from '../Interact/index.vue'
-import Result from '../Result/index.vue'
-import Footing from '../Footer/index.vue'
+import Welcome from 'src/components/Welcome/index.vue'
+import Interact from 'src/components/Interact/index.vue'
+import Result from 'src/components/Result/index.vue'
+import Footing from 'src/components/Footer/index.vue'
 
 // state of game
 const GAME_STATE = {
@@ -15,11 +15,11 @@ const GAME_STATE = {
   complete: 'complete'
 }
 
-let currentState = ref(GAME_STATE.start)
-const size = ref(0)
-const complete = ref(0)
-const timer = ref(0)
-const timerId = ref()
+const currentState = ref<string>(GAME_STATE.start)
+const size = ref<number>(0)
+const complete = ref<number>(0)
+const timer = ref<number>(0)
+const timerId = ref<number | undefined>()
 
 const handleStart = (payload: number) => {
   reset()
@@ -94,7 +94,3 @@ watchEffect(() => {
   />
   <Footing />
 </template>
-
-<style scoped lang="scss">
-@import './style.scss';
-</style>

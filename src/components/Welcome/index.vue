@@ -1,8 +1,8 @@
 <script setup lang="ts">
 defineEmits<{
-  (e: 'start', size: number): void
+  (eventName: 'start', size: number): void
 }>()
-const levels = [
+const gameLevels = [
   {
     size: 4,
     label: 'Easy'
@@ -29,7 +29,7 @@ const levels = [
     <div class="levels">
       <div
         class="level__item"
-        v-for="(level, index) in levels"
+        v-for="(level, index) in gameLevels"
         :key="index"
         @click="$emit('start', level.size)"
       >
